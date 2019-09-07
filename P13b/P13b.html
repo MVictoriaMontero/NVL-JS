@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Práctica de ámbito(II)</title>
+  </head>
+  <body>
+  	<script type="text/javascript">
+  		document.write("¿Es un palíndromo? </br>");
+      
+      function esPalindromo(cadena)
+      {
+        var respuesta =0;
+        document.write("Vamos a comprobar si la cadena "+cadena+" es un palindromo o no: ");
+        var t = cadena.length;
+        //Pasamos todas las letras de la cadena a mayuscula o nimiscula.
+        cadena = cadena.toLowerCase();
+
+        //comprobamos que la cadena no este vacia
+        if(t == 0)
+        {
+          return false;
+        }
+
+        for(i=0;i<t/2;i++)
+        {
+          if(cadena[i] != cadena[t-1-i])
+          {
+            return false;
+          }
+        }
+        return true;
+      }
+      document.write(esPalindromo("Abalaba")+ "</br>");
+      document.write(esPalindromo("holaMUNDO"));
+  	</script>
+    <p>Práctica realizada por Mª Victoria Montero Alcántara</p>
+  </body>
+</html>
