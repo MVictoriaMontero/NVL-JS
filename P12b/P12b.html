@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Práctica de funciones</title>
+  </head>
+  <body>
+  	<script type="text/javascript">
+  		document.write("1. Saca 50 números al azar entre 1 y 100 </br>");
+  		var numeroAzar = new Array(50);
+  		var conteo_par=0, conteo_impar =0;
+
+      numerosAlAzar();
+
+      numerosParesImpares(numeroAzar);
+
+      function numerosAlAzar()
+      {
+          for(var i=0;i<=50; i++)
+          {
+              numeroAzar[i] = Math.floor((Math.random() * 100) + 1);
+              
+              if(numeroAzar % 2 == 0)
+              {
+                conteo_par++;
+              }
+              else
+              {
+                conteo_impar++;
+              }
+              document.write(" "+numeroAzar[i]);
+          } 
+      }
+
+      function numerosParesImpares(numeroAzar)
+      {
+        var numerosPar = new Array(conteo_par);
+        var numeroImpar = new Array(conteo_impar);
+        conteo_par=0;
+        conteo_impar=0;
+        for(var i=0;i<=50; i++)
+        {
+          
+          if(numeroAzar[i] % 2 == 0)
+          {
+            numerosPar[conteo_par] =  numeroAzar[i];
+            conteo_par++;
+          }
+          else
+          {
+            numeroImpar[conteo_impar] = numeroAzar[i];
+            conteo_impar++;
+          }
+        }
+        document.write("</br> Mostramos el array de numeros pares </br>");
+        document.write("Logitud del array: " + numerosPar.length + "</br>");
+        for (var i =0;i<conteo_par; i++) {
+          
+          document.write(" "+numerosPar[i]);
+        }
+        document.write("</br> Mostramos el array de numeros impares </br>");
+        document.write("Logitud del array: " + numeroImpar.length + "</br>");
+        for (var i =0; i<conteo_impar;i++) 
+        {
+          document.write(" "+numeroImpar[i]);
+        }
+      }
+
+
+
+  	</script>
+    <p>Práctica realizada por Mª Victoria Montero Alcántara</p>
+  </body>
+</html>
